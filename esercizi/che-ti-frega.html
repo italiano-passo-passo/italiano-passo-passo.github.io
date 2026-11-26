@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ma che ti frega — мини-упражнение · Italiano passo passo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--bordo:#7A1E2B;--ink:#2E2224;--grey:#7a6a66;--line:#eadfd6;--ok:#2f7d4f;--bad:#b3261e;--soft:#fbf7f3}
+  *{box-sizing:border-box}
+  body{margin:0;background:#fff;color:var(--ink);font:17px/1.45 "Source Sans 3",system-ui,sans-serif}
+  .tri{position:fixed;left:0;top:0;bottom:0;width:8px;background:linear-gradient(#009246 0 33.3%,#f4f5f0 33.3% 66.6%,#ce2b37 66.6%)}
+  .flag{position:absolute;right:14px;top:12px;text-align:center;font:600 12px "Source Sans 3",sans-serif;color:var(--grey)}
+  .flag i{display:block;width:34px;height:22px;margin:0 auto 3px;border-radius:3px;background:linear-gradient(90deg,#009246 0 33.3%,#f4f5f0 33.3% 66.6%,#ce2b37 66.6%);box-shadow:0 0 0 1px #ddd}
+  main{max-width:640px;margin:0 auto;padding:22px 20px 60px 26px}
+  .brand{font:600 13px "Source Sans 3";letter-spacing:.08em;text-transform:uppercase;color:var(--bordo)}
+  h1{font:italic 700 40px/1.1 "Playfair Display",serif;color:var(--bordo);margin:6px 0 4px}
+  h2{font:italic 700 26px/1.2 "Playfair Display",serif;color:var(--bordo);margin:0 0 4px}
+  .sub{color:var(--grey);margin:0 0 18px}
+  .card{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:18px;margin:16px 0}
+  .ico{display:inline-block;width:28px;height:28px;vertical-align:-6px;margin-right:6px}
+  .tr{color:var(--grey);font-size:15px}
+  .scale{display:grid;gap:8px;margin:10px 0 4px}
+  .scale div{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+  .scale i{font:italic 700 20px "Playfair Display",serif;color:var(--bordo);font-style:italic}
+  .tag{display:inline-block;font:700 12px "Source Sans 3";border-radius:999px;padding:2px 9px;margin-left:6px;vertical-align:2px}
+  .t-fr{background:#fde8e6;color:var(--bad)} .t-ok{background:#e4f2ea;color:var(--ok)}
+  .q{padding:12px 0;border-top:1px solid var(--line)}
+  .q:first-of-type{border-top:0}
+  .q .s{font:italic 700 21px "Playfair Display",serif;color:var(--ink)}
+  .q .who{font:600 15px "Source Sans 3";color:var(--grey)}
+  .opts{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .opts button{font:italic 700 18px "Playfair Display",serif;color:var(--bordo);background:#fff;border:2px solid var(--bordo);border-radius:999px;padding:7px 18px;cursor:pointer;min-height:44px}
+  .opts button.ok{background:var(--ok);border-color:var(--ok);color:#fff}
+  .opts button.bad{background:#fff;border-color:var(--bad);color:var(--bad);text-decoration:line-through}
+  .opts button:disabled{cursor:default}
+  .fb{font-size:15px;margin-top:6px;min-height:1em}
+  .fb.ok{color:var(--ok)} .fb.bad{color:var(--bad)}
+  .gap{display:inline-block;min-width:96px;border-bottom:2px solid var(--bordo);text-align:center;color:var(--bordo)}
+  .score{font:700 18px "Source Sans 3";color:var(--bordo);text-align:right;margin-top:8px}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+  .chips button{font:600 15px "Source Sans 3";background:#fff;border:1px solid var(--bordo);color:var(--bordo);border-radius:999px;padding:6px 12px;cursor:pointer}
+  textarea{width:100%;min-height:110px;border:1px solid var(--line);border-radius:12px;padding:12px;font:18px "Source Sans 3";resize:vertical}
+  .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+  .btn{font:700 16px "Source Sans 3";background:var(--bordo);color:#fff;border:0;border-radius:12px;padding:12px 18px;cursor:pointer;min-height:44px}
+  .done{display:none;margin-top:8px;color:var(--ok);font-weight:600}
+  .back{display:inline-block;font:600 15px "Source Sans 3";color:var(--bordo);text-decoration:none;margin-bottom:10px}
+  .cta{background:var(--bordo);color:#fff;border-radius:18px;padding:20px;margin:22px 0 0;text-align:center}
+  .cta h2{color:#fff;margin-bottom:6px}
+  .cta p{margin:0 0 14px;color:#f6e9e6}
+  .cta a{display:inline-block;background:#fff;color:var(--bordo);font:700 17px "Source Sans 3";text-decoration:none;border-radius:12px;padding:12px 20px;margin:4px}
+  .cta .contacts{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+  .cta .contacts a{flex:1 1 120px;margin:0}
+  .cta .more{display:block;margin-top:12px;color:#fff;font:600 15px "Source Sans 3";text-decoration:underline;text-underline-offset:3px;background:none;padding:0}
+  footer{margin-top:28px;text-align:center;color:var(--grey);font-size:15px}
+  footer b{font:italic 700 22px "Playfair Display",serif;color:var(--bordo);display:block}
+  @media (max-width:420px){h1{font-size:34px} main{padding:18px 14px 50px 22px}}
+</style>
+</head>
+<body>
+<div class="tri"></div>
+<div class="flag"><i></i>Italiano A2</div>
+<main>
+  <a class="back" href="./">← Все упражнения</a>
+  <div class="brand">Italiano passo passo · мини-урок</div>
+  <h1>Ma che ti frega!</h1>
+  <p class="sub">Глагол fregarsene и родня из рождественской рекламы</p>
+
+  <section class="card">
+    <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#2E2224" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2"/><path d="M8 7h7M8 11h5"/></svg>Правило</h2>
+    <p><b>Ma che ti frega?</b> — «Да какая тебе разница? / Тебе-то что?». Это форма глагола <b>fregarsene</b> — «плевать, быть всё равно». Разговорное слово: с друзьями можно, с начальником — нет.</p>
+    <p>В глаголе два маленьких слова: <b>me</b> (себе) + <b>ne</b> (на это). Меняются оба: местоимение и окончание.</p>
+    <div class="scale">
+      <div><i>io me ne frego</i> <span class="tr">— мне всё равно</span></div>
+      <div><i>tu te ne freghi</i> <span class="tr">— тебе всё равно</span></div>
+      <div><i>lui / lei se ne frega</i> <span class="tr">— ему / ей всё равно</span></div>
+      <div><i>noi ce ne freghiamo</i> <span class="tr">— нам всё равно</span></div>
+      <div><i>voi ve ne fregate</i> <span class="tr">— вам всё равно</span></div>
+      <div><i>loro se ne fregano</i> <span class="tr">— им всё равно</span></div>
+    </div>
+    <p>Чего? — <b>di</b>: <i>Me ne frego <b>del</b> panettone.</i> <span class="tr">Мне плевать на панеттоне.</span><br>
+    Ещё две фразы: <i>Chi se ne frega!</i> <span class="tr">— Да кому какое дело!</span> · вежливо: <i>Non importa.</i> <span class="tr">— Неважно.</span></p>
+  </section>
+
+  <section class="card" id="exR">
+    <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#2E2224" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="16.5" cy="9" r="2.5"/><path d="M3 20c0-3 2.2-5 5-5s5 2 5 5M13 20c0-2.6 1.6-4.4 3.5-4.4S20 17.4 20 20"/></svg>1. Родня из рекламы</h2>
+    <p class="tr">Этих людей в рождественской рекламе «не увидят». Кто они?</p>
+    <div class="q" data-a="1" data-h="Это мама мужа или жены."><div class="s">la suocera</div><div class="opts"><button>сестра</button><button>свекровь / тёща</button><button>соседка</button></div><div class="fb"></div></div>
+    <div class="q" data-a="2" data-h="Сын дяди или тёти."><div class="s">il cugino</div><div class="opts"><button>повар</button><button>сосед</button><button>двоюродный брат</button></div><div class="fb"></div></div>
+    <div class="q" data-a="0" data-h="Zio Gino — брат мамы или папы."><div class="s">lo zio</div><div class="opts"><button>дядя</button><button>дедушка</button><button>друг</button></div><div class="fb"></div></div>
+    <div class="q" data-a="1" data-h="Это собака с кудрявой шерстью."><div class="s">il barboncino</div><div class="opts"><button>котёнок</button><button>пудель</button><button>малыш</button></div><div class="fb"></div></div>
+    <div class="q" data-a="2" data-h="Il fratello — брат, i fratelli — много."><div class="s">i fratelli</div><div class="opts"><button>родители</button><button>друзья</button><button>братья (и сёстры)</button></div><div class="fb"></div></div>
+    <div class="score"></div>
+  </section>
+
+  <section class="card" id="ex2">
+    <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#2E2224" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>2. Me ne frego, te ne freghi…</h2>
+    <p class="tr">Выберите правильную форму <b>fregarsene</b>. Спросите себя: кто?</p>
+    <div class="q" data-a="0" data-h="Кто? — io → me ne…"><div class="s">Io <span class="gap">…</span> del cenone.</div><div class="tr">Мне всё равно на праздничный ужин.</div><div class="opts"><button>me ne frego</button><button>te ne freghi</button><button>se ne frega</button></div><div class="fb"></div></div>
+    <div class="q" data-a="1" data-h="Кто? — tu → te ne…"><div class="s">Tu <span class="gap">…</span> di tutto!</div><div class="tr">Тебе на всё наплевать!</div><div class="opts"><button>se ne frega</button><button>te ne freghi</button><button>me ne frego</button></div><div class="fb"></div></div>
+    <div class="q" data-a="1" data-h="Suocera — она, одна → se ne frega."><div class="s">Mia suocera <span class="gap">…</span> dei regali.</div><div class="tr">Свекрови всё равно на подарки.</div><div class="opts"><button>se ne fregano</button><button>se ne frega</button><button>me ne frego</button></div><div class="fb"></div></div>
+    <div class="q" data-a="0" data-h="Noi → ce ne… + окончание -iamo."><div class="s">Noi <span class="gap">…</span> del freddo.</div><div class="tr">Нам всё равно, что холодно.</div><div class="opts"><button>ce ne freghiamo</button><button>ve ne fregate</button><button>se ne fregano</button></div><div class="fb"></div></div>
+    <div class="q" data-a="2" data-h="Cugini — они, много → se ne fregano."><div class="s">I cugini <span class="gap">…</span> della tombola.</div><div class="tr">Кузенам всё равно на томболу.</div><div class="opts"><button>se ne frega</button><button>ce ne freghiamo</button><button>se ne fregano</button></div><div class="fb"></div></div>
+    <div class="q" data-a="1" data-h="Voi → ve ne… + окончание -ate."><div class="s">Voi <span class="gap">…</span> della dieta a Natale?</div><div class="tr">Вам всё равно на диету на Рождество?</div><div class="opts"><button>ce ne freghiamo</button><button>ve ne fregate</button><button>te ne freghi</button></div><div class="fb"></div></div>
+    <div class="score"></div>
+  </section>
+
+  <section class="card" id="ex3">
+    <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#2E2224" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="m13 7 4 4"/></svg>3. А вам?</h2>
+    <p><i>È quasi Natale…</i> Что вам на праздниках совсем неважно? Напишите 1–2 фразы по-итальянски.</p>
+    <div class="chips">
+      <button>Me ne frego di…</button><button>Mia zia se ne frega di…</button><button>Chi se ne frega!</button>
+    </div>
+    <textarea id="mine" placeholder="Me ne frego del panettone! / I miei cugini se ne fregano di…"></textarea>
+    <div class="row"><button class="btn" id="copy">Скопировать</button></div>
+    <div class="done" id="copied">Скопировано! Вставьте ответ в комментарии под рилс — мы проверим ✍️</div>
+  </section>
+
+  <section class="cta">
+    <h2>Приходите к нам на занятия</h2>
+    <p>Напишите, чтобы узнать больше: расскажите о своём уровне и задачах — мы предложим, с чего начать.</p>
+    <div class="contacts">
+      <a href="https://wa.me/393446648085?text=Ciao%2C%20%D0%9D%D0%B0%D0%B4%D0%B5%D0%B6%D0%B4%D0%B0%21%20%D0%A5%D0%BE%D1%87%D1%83%20%D1%83%D0%B7%D0%BD%D0%B0%D1%82%D1%8C%20%D0%BE%20%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D1%8F%D1%85%20%D0%B8%D1%82%D0%B0%D0%BB%D1%8C%D1%8F%D0%BD%D1%81%D0%BA%D0%B8%D0%BC." target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://t.me/n_pavluchenko" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://instagram.com/ip_italiano" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <a class="more" href="./">← Ещё упражнения</a>
+  </section>
+
+  <footer><b>Italiano passo passo</b>итальянский язык онлайн · @ip_italiano</footer>
+</main>
+<script>
+document.querySelectorAll('.card .q').forEach(q=>{
+  const btns=[...q.querySelectorAll('.opts button')], fb=q.querySelector('.fb'), a=+q.dataset.a;
+  btns.forEach((b,i)=>b.addEventListener('click',()=>{
+    if(q.dataset.done) return;
+    if(i===a){
+      b.classList.add('ok'); btns.forEach(x=>x.disabled=true); q.dataset.done=q.dataset.tries?'2':'1';
+      fb.className='fb ok'; fb.textContent='Giusto! 👍'; const g=q.querySelector('.gap'); if(g) g.textContent=b.textContent;
+    }else{
+      b.classList.add('bad'); b.disabled=true; q.dataset.tries='1';
+      fb.className='fb bad'; fb.textContent=q.dataset.h;
+    }
+    const card=q.closest('.card'), qs=[...card.querySelectorAll('.q')];
+    if(qs.every(x=>x.dataset.done)){
+      const first=qs.filter(x=>x.dataset.done==='1').length;
+      card.querySelector('.score').textContent=`С первой попытки: ${first} из ${qs.length}`;
+    }
+  }));
+});
+const ta=document.getElementById('mine');
+document.querySelectorAll('.chips button').forEach(c=>c.addEventListener('click',()=>{
+  ta.value=(ta.value&&!ta.value.endsWith(' ')&&!ta.value.endsWith('\n')?ta.value+' ':ta.value)+c.textContent.replace('…',' ');
+  ta.focus();
+}));
+document.getElementById('copy').addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(ta.value)}catch(e){ta.select();document.execCommand('copy')}
+  document.getElementById('copied').style.display='block';
+});
+</script>
+</body>
+</html>
