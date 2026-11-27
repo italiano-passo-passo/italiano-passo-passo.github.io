@@ -24,6 +24,7 @@
   .card{background:var(--soft);border:1px solid var(--line);border-radius:18px;padding:18px;margin:16px 0}
   .ico{display:inline-block;width:28px;height:28px;vertical-align:-6px;margin-right:6px}
   .tr{color:var(--grey);font-size:15px}
+  .hint{display:none;background:#fff4e5;border:1px solid #f0c98a;border-radius:12px;padding:10px 12px;font-size:15px;margin:0 0 10px}
   .note{font-size:15px;color:var(--grey);margin:8px 0 0}
   /* vocabulary */
   .scale{display:flex;align-items:center;gap:8px;font:600 13px "Source Sans 3";color:var(--grey);margin:4px 0 10px}
@@ -93,6 +94,7 @@
     <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#2E2224" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2"/><path d="M8 7h7M8 11h5"/></svg>Словарик</h2>
     <p class="tr">Нажмите на слово — услышите, как оно звучит. Цвет — «градусник грубости».</p>
     <div class="scale">мягко<i></i>грубо</div>
+    <div id="nohear" class="hint">Не слышно? Откройте страницу в Safari или Chrome: во встроенном браузере Instagram озвучка часто не работает (⋯ вверху справа → «Открыть в браузере»). Проверьте также, что звук телефона включён и не стоит беззвучный режим.</div>
     <div class="voc">
       <button class="w l1"><div class="spk">SPK</div><div><b>maleducato</b><span>невоспитанный</span></div></button>
       <button class="w l1"><div class="spk">SPK</div><div><b>incivile</b><span>хам, грубиян</span></div></button>
@@ -112,23 +114,24 @@
 
   <section class="card">
     <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#2E2224" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg>Правило</h2>
-    <p>Лиза говорит: <i>«Sei <b>un</b> imbecille, <b>un</b> bifolco, <b>uno</b> zotico…»</i> Почему то <b>un</b>, то <b>uno</b>? Это неопределённый артикль — он зависит от рода и первой буквы слова.</p>
+    <p>Лиза говорит: <i>«Sei <b>un</b> imbecille, <b>un</b> bifolco, <b>uno</b> zotico…»</i> Почему то <b>un</b>, то <b>uno</b>? Это неопределённый артикль — он зависит от рода и первой буквы существительного.</p>
     <div class="rule">
       <div class="a">un</div><div>мужской род — почти всегда: <i>un cafone, un imbecille</i></div>
       <div class="a">uno</div><div>мужской род перед <b>z</b>, <b>s + согласная</b>, <b>gn</b>, <b>ps</b>: <i>uno zotico, uno stronzo</i></div>
       <div class="a">una</div><div>женский род: <i>una bestiaccia</i></div>
       <div class="a">un'</div><div>женский род перед гласной: <i>un'insolente</i></div>
     </div>
-    <p style="margin-bottom:0">Ругаем женщину? Окончание <b>-o</b> меняется на <b>-a</b>, а слова на <b>-e</b> не меняются:</p>
+    <p style="margin-bottom:0">Ругаем женщину? Смотрим на окончание существительного или прилагательного:</p>
     <div class="pair">
-      <div><b>-o → -a</b><br><i>un cafone → una cafona</i><br><i>maleducato → maleducata</i></div>
-      <div><b>-e = -e</b><br><i>un imbecille → un'imbecille</i><br><i>insolente → insolente</i></div>
+      <div><b>-o → -a</b><br><i>villano → villana</i><br><i>zotico → zotica</i><br><i>maleducato → maleducata</i></div>
+      <div><b>-one → -ona</b><br><i>cafone → cafona</i><br><i>imbroglione → imbrogliona</i><br><span class="tr">(жулик → жульница)</span></div>
+      <div><b>-e и -ista = не меняются</b><br><i>un imbecille → un'imbecille</i><br><i>un maschilista → una maschilista</i><br><span class="tr">меняется только артикль</span></div>
     </div>
   </section>
 
   <section class="card" id="ex1">
     <h2><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="#2E2224" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>1. Un, uno, una или un'?</h2>
-    <p class="tr">Смотрите на род и на первую букву слова.</p>
+    <p class="tr">Смотрите на род и на первую букву существительного.</p>
     <div class="q" data-a="1"><div class="s">Sei <span class="gap">…</span> zotico!</div><div class="opts"><button>un</button><button>uno</button><button>una</button><button>un'</button></div><div class="fb"></div></div>
     <div class="q" data-a="0"><div class="s">Sei <span class="gap">…</span> cafone!</div><div class="opts"><button>un</button><button>uno</button><button>una</button><button>un'</button></div><div class="fb"></div></div>
     <div class="q" data-a="2"><div class="s">Sei <span class="gap">…</span> bestiaccia!</div><div class="opts"><button>un</button><button>uno</button><button>una</button><button>un'</button></div><div class="fb"></div></div>
@@ -183,32 +186,61 @@
   <footer><b>Italiano passo passo</b>итальянский язык онлайн · @ip_italiano</footer>
 </main>
 <script>
-/* ---------- озвучка: итальянский, женский голос ---------- */
+/* ---------- озвучка ----------
+   1) если есть запись audio/parolacce/<слово>.mp3 — играет она (можно добавить позже свои записи);
+   2) иначе — встроенный голос устройства, итальянский, по возможности женский. */
 const SPK_SVG='<svg viewBox="0 0 24 24" fill="none" stroke="#7A1E2B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 9a4 4 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg>';
-const FEMALE=/alice|federica|paola|elsa|isabella|carla|emma|bianca|giulia|chiara|elena|female|donna|it-it-.*(standard-a|wavenet-a|neural2-a)/i;
-const MALE=/luca|cosimo|diego|giorgio|paolo|roberto|marco|male(?!.*fe)|uomo/i;
-let VOICE=null;
+const FEMALE=/alice|federica|paola|elsa|isabella|carla|emma|bianca|giulia|chiara|elena|female|donna/i;
+const MALE=/luca|cosimo|diego|giorgio|paolo|roberto|marco|uomo/i;
+const HAS_TTS='speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+let VOICE=null, CUR=null, PLAYER=null;
 function pickVoice(){
-  const v=speechSynthesis.getVoices().filter(x=>/^it/i.test(x.lang));
+  if(!HAS_TTS) return;
+  const v=speechSynthesis.getVoices().filter(x=>/^it[-_]/i.test(x.lang)||/^it$/i.test(x.lang));
   VOICE=v.find(x=>FEMALE.test(x.name))||v.find(x=>!MALE.test(x.name))||v[0]||null;
 }
-if('speechSynthesis' in window){pickVoice();speechSynthesis.onvoiceschanged=pickVoice;}
-function say(text,el){
-  if(!('speechSynthesis' in window)) return;
-  speechSynthesis.cancel();
-  const u=new SpeechSynthesisUtterance(text.replace(/…/g,' ').trim());
-  u.lang='it-IT'; if(VOICE) u.voice=VOICE; u.rate=0.9; u.pitch=1.05;
-  if(el){el.classList.add('playing'); u.onend=u.onerror=()=>el.classList.remove('playing');}
-  speechSynthesis.speak(u);
+if(HAS_TTS){pickVoice(); speechSynthesis.addEventListener?speechSynthesis.addEventListener('voiceschanged',pickVoice):(speechSynthesis.onvoiceschanged=pickVoice);}
+const slug=t=>t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+function tts(text,el){
+  if(!HAS_TTS){showHint();return;}
+  if(!VOICE) pickVoice();
+  if(speechSynthesis.speaking||speechSynthesis.pending) speechSynthesis.cancel();
+  CUR=new SpeechSynthesisUtterance(text);          // глобальная ссылка — иначе Chrome иногда «теряет» фразу
+  CUR.lang=VOICE?VOICE.lang:'it-IT'; if(VOICE) CUR.voice=VOICE; CUR.rate=0.9;
+  if(el){el.classList.add('playing'); CUR.onend=CUR.onerror=()=>el.classList.remove('playing');}
+  setTimeout(()=>{ speechSynthesis.speak(CUR); if(speechSynthesis.paused) speechSynthesis.resume(); },60);
+  setTimeout(()=>{ if(!speechSynthesis.speaking && el && el.classList.contains('playing')){el.classList.remove('playing'); showHint();} },1800);
 }
+function say(text,el){
+  text=text.replace(/…/g,' ').replace(/\s+/g,' ').trim();
+  if(PLAYER){PLAYER.pause();PLAYER=null;}
+  const au=new Audio('audio/parolacce/'+slug(text)+'.mp3'); PLAYER=au;
+  if(el) el.classList.add('playing');
+  au.onended=()=>el&&el.classList.remove('playing');
+  au.onerror=()=>{ if(el) el.classList.remove('playing'); tts(text,el); };
+  const pr=au.play(); if(pr&&pr.catch) pr.catch(()=>{});
+}
+function rec(text){ /* только запись, без голоса телефона */
+  text=text.replace(/…/g,' ').replace(/\s+/g,' ').trim();
+  if(PLAYER){PLAYER.pause();}
+  const au=new Audio('audio/parolacce/'+slug(text)+'.mp3'); PLAYER=au; au.onerror=()=>{};
+  const pr=au.play(); if(pr&&pr.catch) pr.catch(()=>{});
+}
+function showHint(){ document.getElementById('nohear').style.display='block'; }
+if(/Instagram|FBAN|FBAV/i.test(navigator.userAgent)) showHint();
 document.querySelectorAll('.spk').forEach(s=>s.innerHTML=SPK_SVG);
 document.querySelectorAll('.w').forEach(w=>w.addEventListener('click',()=>say(w.querySelector('b').textContent,w)));
 /* кнопка «послушать» у фраз в упражнении 3 */
 document.querySelectorAll('#ex3 .q .s').forEach(s=>{
-  const b=document.createElement('button'); b.className='say'; b.innerHTML=SPK_SVG; b.setAttribute('aria-label','Послушать');
-  b.addEventListener('click',()=>say(s.firstChild.textContent)); s.appendChild(b);
+  const t=s.firstChild.textContent, probe=new Audio();
+  probe.preload='metadata';
+  probe.onloadedmetadata=()=>{ /* кнопка появляется, только если есть запись */
+    const b=document.createElement('button'); b.className='say'; b.innerHTML=SPK_SVG; b.setAttribute('aria-label','Послушать');
+    b.addEventListener('click',()=>rec(t)); s.appendChild(b);
+  };
+  probe.src='audio/parolacce/'+slug(t.replace(/…/g,' ').trim())+'.mp3';
 });
-const HINT={ex1:'Посмотрите на первую букву и род слова.',ex2:'Женщине: -o → -a, а -e не меняется.',ex3:'Послушайте ещё раз и подумайте.'};
+const HINT={ex1:'Посмотрите на род и первую букву существительного.',ex2:'Женщине: -o → -a, -one → -ona, а -e не меняется.',ex3:'Послушайте ещё раз и подумайте.'};
 document.querySelectorAll('.card .q').forEach(q=>{
   const btns=[...q.querySelectorAll('.opts button')], fb=q.querySelector('.fb'), a=+q.dataset.a, gap=q.querySelector('.gap'), card=q.closest('.card');
   btns.forEach((b,i)=>b.addEventListener('click',()=>{
@@ -216,7 +248,7 @@ document.querySelectorAll('.card .q').forEach(q=>{
     if(i===a){
       b.classList.add('ok'); btns.forEach(x=>x.disabled=true); q.dataset.done=q.dataset.tries?'2':'1';
       fb.className='fb ok'; fb.textContent='Giusto! 👍'; if(gap) gap.textContent=b.textContent;
-      if(card.id==='ex1'||card.id==='ex2'){ say(q.querySelector('.s').textContent.replace('…',b.textContent).replace(/\s+'/,"'").replace("un' ","un'")); }
+      if(card.id==='ex1'||card.id==='ex2'){ rec(q.querySelector('.s').textContent.replace('…',b.textContent).replace(/\s+'/,"'").replace("un' ","un'")); }
     }else{
       b.classList.add('bad'); b.disabled=true; q.dataset.tries='1';
       fb.className='fb bad'; fb.textContent=HINT[card.id]||'Попробуйте ещё раз.';
